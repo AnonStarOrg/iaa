@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+		"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+		"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+	<package name="default" extends="tiles-default">
+		<action name="ShowSingleList" 
+			class="de.nordakademie.singlesearch.action.ShowSingleListAction">
+			<result type="tiles">SingleList</result>
+		</action>
+		<action name="ShowSingle"
+			class="de.nordakademie.singlesearch.action.ShowSingleAction">
+			<result type="tiles">EditSingle</result>	
+		</action>
+		<action name="SaveSingle"
+			class="de.nordakademie.singlesearch.action.SaveSingleAction">
+			<result type="chain">ShowSingleList</result>
+			<result name="input" type="tiles">EditSingle</result>	
+		</action>
+	</package>
+</struts>
